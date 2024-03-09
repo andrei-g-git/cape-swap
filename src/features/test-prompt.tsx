@@ -1,5 +1,6 @@
 import { useState } from "react"
-import $ from "jquery"
+
+import img from '../assets/test.png'
 
 type Data = {
     [key:string]: string | number
@@ -8,6 +9,7 @@ type Data = {
 
 export const TestPrompt = (props:any) => {
     const [prompt, setPrompt] = useState("");
+    const [image, setImage] = useState(img)
 
     return(
         <>
@@ -15,7 +17,7 @@ export const TestPrompt = (props:any) => {
                 Type a positive prompt:
             </label>
             <form
-                onSubmit={event => handleSubmit(event, prompt)}
+                onSubmit={event => handleSubmit(event, prompt, setImage)}
             >
                 <textarea
                     cols={30}
@@ -39,6 +41,10 @@ export const TestPrompt = (props:any) => {
             <p>
                 {prompt}
             </p>
+            
+            <img src={image} alt='n/a' width={300} height={400}>
+
+            </img>
         </>
     );
 };
@@ -48,7 +54,7 @@ export const handleChange = (prompt: string, setPrompt: React.Dispatch<React.Set
 };
 
 
-export const handleSubmit = (event:any, prompt: string | Data) => {
+export const handleSubmit = (event:any, prompt: string | Data, setImage: Function) => {
     event.preventDefault();
     
     console.log("clicked submit")
@@ -56,10 +62,10 @@ export const handleSubmit = (event:any, prompt: string | Data) => {
     const body = {prompt: prompt}
 
     const response = fetch(
-        "http://localhost:9991/diffusers", 
+        "http://localhost:5000/diffusers",
         {
             method: "POST",  
-            mode: /* "cors", */"no-cors",
+            mode: "cors",/* "no-cors", */
             //credentials: "omit",
             headers: {
                 "Content-Type": "application/json"
@@ -69,7 +75,10 @@ export const handleSubmit = (event:any, prompt: string | Data) => {
             body: JSON.stringify(body) 
         }
     )
-        .then(response => {
-            console.log("the response from the server: ", response)
-        })
+
+        .then((response) => response.blob())
+        .then((myBlob) => {
+          const objectURL = URL.createObjectURL(myBlob);
+          setImage(objectURL)
+        });
 };
