@@ -1,0 +1,17 @@
+.logo{
+
+}
+
+.logo-background{
+    padding: 0.1rem 0.2rem;
+    background-color: red;
+}
+
+.logo-text{
+    color: white;
+    margin: 0;
+    font-family: Tahoma;
+    letter-spacing: -0.1rem;
+    font-weight: bolder;
+    font-size: xx-large;
+}
