@@ -1,3 +1,74 @@
 .panel{
     background-color: white;
 }
+
+#panel-1, 
+#panel-2,
+#panel-3{
+    animation-fill-mode: forwards;
+}
+
+#panel-1{
+    animation: land-1 0.5s ease-in-out;
+
+}
+
+#panel-2{
+    animation: land-2 1s ease-in-out;
+}
+
+#panel-3{
+   animation: land-3 1.5s ease-in-out;
+}
+
+
+@keyframes land-1{
+    0% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: none;
+    }
+    1% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: block;
+    }    
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes land-2{
+    0% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: none;
+    }
+    50% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: block;
+    }    
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes land-3{
+    0% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: none;
+    }
+    66% {
+        transform: translateY(-500px);
+        opacity: 0;
+        display: block;
+    }    
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

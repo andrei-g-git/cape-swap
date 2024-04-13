@@ -32,14 +32,15 @@ function TestImage(props: any) {
                 </button>
             </form>
 
-            <img 
+            {/* <img 
                 src={selfie}
                 alt={placeholderImage}
                 width={768}
                 height={768}
             >
             
-            </img>
+            </img> */}
+            <div dangerouslySetInnerHTML={{__html: selfie}}></div>
         </>
     )
 }
@@ -95,6 +96,14 @@ export const handleSubmit = (image: File, setSelfie: Function, prompt: string) =
                 body: data
             }
         )
+
+
+            .then(res => res.text())
+            .then(html => {
+                setSelfie(html)
+            })
+
+
             // .then(response => response.json())
             // .then(json =>{
             //     console.log(`++++++++++++++\n response type:   \n ${json["data"]} \n+++++++++++++`)
@@ -105,10 +114,10 @@ export const handleSubmit = (image: File, setSelfie: Function, prompt: string) =
 
 
 
-            .then(response => {
-                setSelfie("http://localhost:5000/diffusers/inpaint")
-                console.log(response)
-            })
+            // .then(response => {
+            //     setSelfie("http://localhost:5000/diffusers/inpaint")
+            //     console.log(response)
+            // })
 
 
 

@@ -8,19 +8,20 @@ import Content from './features/content'
 function App() {
 
 
-  return (
-    <main className="main">
-      <div className="container">
-        <div className="main-background"></div> 
-        <div className='nav-wrapper'>
-          <Nav/>       
-        </div>
+	return (
+		<main className="main">
+			<div className="container">
+				<div className="main-background"></div>
+				<div className='nav-wrapper'>
+					<Nav />
+				</div>
 
-        <Content/> 
-      </div>
+				<Content />
+			</div>
 
-    </main>
-  )
+		</main>
+
+	)
 }
 
 export default App
