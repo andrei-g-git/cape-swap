@@ -1,0 +1,13 @@
+input[type="file"]{
+    display: none;
+}
+
+.image-upload{
+    display: block;
+    cursor: pointer;
+    background-image: url(C:/work/js/cape-swap/src/assets/add-file.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 64px;
+    height: 64px;
+}

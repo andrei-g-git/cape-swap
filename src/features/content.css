@@ -6,24 +6,6 @@
     top: 10%;
 }
 
-/* #panel-1, 
-#panel-2,
-#panel-3{
-    animation: land-1 2s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-#panel-1{
-    animation-delay: 0s;
-}
-
-#panel-2{
-    animation-delay: 1s;
-}
-
-#panel-3{
-    animation-delay: 2s;
-} */
 
 .panels{
     width: 100%;
@@ -34,14 +16,3 @@
     gap: 1.3rem;
 }
 
-
-/* @keyframes land-1{
-    from {
-        transform: translateY(-500px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-} */

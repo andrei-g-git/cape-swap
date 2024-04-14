@@ -7,7 +7,6 @@ import Content from './features/content'
 
 function App() {
 
-
 	return (
 		<main className="main">
 			<div className="container">
@@ -20,7 +19,6 @@ function App() {
 			</div>
 
 		</main>
-
 	)
 }
 
