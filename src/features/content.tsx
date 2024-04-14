@@ -2,20 +2,15 @@ import { useState } from 'react'
 import Panels from './panels'
 import './content.css'
 
-function Content(props: any) {
-    const [gotInference, setGotInference] = useState(false)    
+function Content(props: any) { //this looks a bit useless now...
 
     return (
         <div className="content">
-            <Panels biggerFirst={gotInference} 
-                key={gotInference}
-            />
-
-            <button onClick={() => setGotInference(!gotInference)}>
-                click
-            </button>
+            <Panels />
         </div>
     )
 }
+
+
 
 export default Content
